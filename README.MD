@@ -4,7 +4,7 @@ This is a simple (opinionated) guide to preparing and publishing a Semantic Web 
 
 It is based on GitHub for repository and source control and GitHub Pages for hosting.
 
-Author: João Paulo A. Almeida
+Author: João Paulo A. Almeida.
 
 ## Setup of GitHub repository
 
@@ -20,7 +20,7 @@ You can clone the repository you create and use it as a basis for your work on t
 
 ## Ontology URI and permanent URLs
 
-Adopt an ontology URI which you can match with a permanent URL service, e.g., `http://purl.org/car-ontology#` or `http://purl.org/user123/car-ontology#` if you choose to use the service of [purl.org](http://purl.org).
+Adopt an ontology URI which you can match with a permanent URL service such as `http://purl.org/car-ontology#` or `http://purl.org/user123/car-ontology#` if you choose to use the service of [purl.org](http://purl.org).
 
 We recommend a [hash namespace](https://www.w3.org/TR/swbp-vocab-pub/#hash), since the setup is simpler, and entities defined in the ontology will be considered 'fragments' of the ontology, e.g., `http://purl.org/car-ontology#ConvertibleCar`.
 

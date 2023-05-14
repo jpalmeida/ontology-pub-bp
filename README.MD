@@ -1,18 +1,18 @@
 # Ontology publication how-to (incorporating some best-practices)
 
-This is a simple (opinionated) guide to preparing and publishing a Semantic Web ontology (following some FAIR principles).
+This is a simple (opinionated) guide to preparing and publishing a Semantic Web OWL ontology (following some FAIR principles).
 
 It is based on GitHub for repository and source control and GitHub Pages for hosting.
 
-Author: João Paulo A. Almeida.
+Author: João Paulo A. Almeida
 
 ## Setup of GitHub repository
 
-Create a GitHub repository for your ontology project. For our examples, we will assume a username on GitHub called `user123`, and a repository called `car-ontology`. (Instead of a user, you can also publish your project under an organization on GitHub.)
+Create a GitHub repository for your ontology project. For our examples, we will assume a username on GitHub called `user123`, and a repository called `car-ontology`. (Instead of a user, you can also publish your project under an organization on GitHub, so `user123` might as well be an organization name in GitHub.)
 
-A `README.MD` file for the repository is recommended. See <https://github.com/nemo-ufes/gufo/blob/master/README.md> for an example.
+Adding a `README.MD` file for the repository is recommended. See <https://github.com/nemo-ufes/gufo/blob/master/README.md> for an example.
 
-A `LICENSE` file is also recommended. See <https://github.com/nemo-ufes/gufo/blob/master/LICENSE> for an example using Creative Commons Attribution 4.0 International.
+Also adding a `LICENSE` file is recommended. See <https://github.com/nemo-ufes/gufo/blob/master/LICENSE> for an example using Creative Commons Attribution 4.0 International.
 
 You can clone the repository you create and use it as a basis for your work on tools like Protégé.
 
@@ -27,17 +27,19 @@ We recommend a [hash namespace](https://www.w3.org/TR/swbp-vocab-pub/#hash), sin
 For gUFO, we used the URI <http://purl.org/nemo/gufo#>. We setup <http://purl.org/nemo> to point to
 <https://nemo-ufes.github.io/gufo/gufo.ttl> with a 302 Found (note `https` is used in the target of the redirect, but not in the ontology URI.) 
 
-So, in the example, <http://purl.org/user123/car-ontology> should point to `https://user123.github.io/car-ontology/car-ontology.ttl`. See below under Publication with GitHub pages for information on how the Turtle file ends up online.
+So, in the example, <http://purl.org/user123/car-ontology> should redirect to `https://user123.github.io/car-ontology/car-ontology.ttl`. See below under Publication with GitHub pages for information on how the Turtle file ends up online.
 
-(Another example of service for permanent URLs is <https://w3id.org>. It is more complicated to setup than purl.org, and it takes more time too as there are manual steps the maintainers of that service need to take. The benefit is that, differently from <http://purl.org>, it supports HTTP content negotiation to serve the ontology in multiple serialization formats. See <https://github.com/perma-id/w3id.org/blob/79c131feba2bbf5248cc92d7a3f6515f741e8957/example/.htaccess> for the kinds of rules that need to be written for that, concerning <http://w3id.org/example>. The approach used for that ontology is to use the same URI to retrieve documentation of the ontology in the form of a web page - which is an established fancy practice, but can be confusing, afterall the URI should denote the ontology, and its documentation is a different entity.)
+(Another example of service for permanent URLs is <https://w3id.org>. It is more complicated to setup than purl.org, and it takes more time too as there are manual steps the maintainers of that service need to take on your behalf. The benefit is that, differently from <http://purl.org>, it supports HTTP content negotiation to serve the ontology in multiple serialization formats. See <https://github.com/perma-id/w3id.org/blob/79c131feba2bbf5248cc92d7a3f6515f741e8957/example/.htaccess> for the kinds of rules that need to be written for that, concerning <http://w3id.org/example>. The approach used for that ontology is to use the same URI to retrieve documentation of the ontology in the form of a Web page, which happens whenever the client is a browser. This is an established practice, but my opinion is that it can be confusing, afterall a URI should identify always a single entity, and an ontology and its documentation are different entities!)
 
 ## Versioning
 
-TODO: add information on versioning
+OWL ontologies may have a version URI (or, more generally, IRI), to identify a specific version. Assuming the use of some semantic versioning scheme, the first release of the ontology would have a version URI `http://purl.org/car-ontology/1.0.0#`. Set up your redirect accordingly. In our running example, <http://purl.org/user123/car-ontology/1.0.0> should redirect to `https://user123.github.io/car-ontology/car-ontology.ttl`.
+
+(If you are using Protégé, note that in the Ontology Version IRI field it suggests an example with `/1.0.0` *after* the hash sign. That is not advisable, as http clients would not be able to resolve different versions of the ontology, as the version would be a fragment, and we actually want to denote different entities with the version URI.)
 
 ## Ontology documentation and recommended meta-data
 
-A bare mininum requirement is that elements of the ontology are annotated with `rdfs:comment`. It is also recommended to have `rdfs:label` annotations for all classes and properties.
+A bare minimum requirement is that elements of the ontology are annotated with `rdfs:comment`. It is also recommended to have `rdfs:label` annotations for all classes and properties.
 
 We recommend the following ontology meta-data:
 
@@ -51,10 +53,11 @@ We recommend the following ontology meta-data:
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
 @base <http://purl.org/user123/car-ontology#> .
 
-<http://purl.org/user123/car-ontology#> rdf:type owl:Ontology ;
-                              owl:versionIRI <http://purl.org/user123/car-ontology#/1.0.0> ;
+<http://purl.org/user123/car-ontology#> rdf:type owl:Ontology,  voaf:Vocabulary ;
+                              owl:versionIRI <http://purl.org/user123/car-ontology/1.0.0#> ;
                               owl:versionInfo "1.0.0"@en ;
                               dc:creator "Doe, Jane" ,
                                          "Smith, John" ;
@@ -104,6 +107,4 @@ See also <https://github.com/nemo-ufes/gufo/tree/master/docs> for a markdown ove
 
 If you serious about publishing your ontology to the world, considering listing it in registries like [LOV](https://lov.linkeddata.es/dataset/lov/suggest).
 
-Also consider assessing your ontology with the [FOOPS! Ontology Pitfall Scanner for FAIR](https://foops.linkeddata.es/FAIR_validator.html).
-
-
+Also consider assessing your ontology with the [FOOPS! Ontology Pitfall Scanner for FAIR](https://foops.linkeddata.es/FAIR_validator.html), which will check for the presence of metadata and adherence to some established conventions for Semantic Web ontologies.

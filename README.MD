@@ -1,6 +1,8 @@
-# Ontology publication how-to (incorporating some best-practices)
+# Semantic Web Ontology publication how-to
 
-This is a simple (opinionated) guide to preparing and publishing a Semantic Web OWL ontology (following some FAIR principles).
+## About
+
+This is a simple (opinionated) guide to preparing and publishing a Semantic Web OWL ontology (following some FAIR principles and incorporating some good practices).
 
 It is based on GitHub for repository and source control and GitHub Pages for hosting.
 

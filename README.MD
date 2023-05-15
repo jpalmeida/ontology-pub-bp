@@ -4,7 +4,7 @@
 
 This is a simple (opinionated) guide to preparing and publishing a Semantic Web OWL ontology (following some FAIR principles and incorporating some good practices).
 
-It is based on GitHub for repository and source control, GitHub Pages for hosting for [pyLODE](https://github.com/RDFLib/pyLODE) for documentation generation. Some recommendations are also based on Protégé's support.
+It is based on [GitHub](https://github.com) for repository and source control, GitHub Pages for hosting, and [pyLODE](https://github.com/RDFLib/pyLODE) for documentation generation. Some recommendations are also based on [Protégé](https://protege.stanford.edu)'s support.
 
 Author: João Paulo A. Almeida
 
@@ -26,8 +26,8 @@ Adopt an ontology URI which you can match with a permanent URL service such as `
 
 We recommend a [hash namespace](https://www.w3.org/TR/swbp-vocab-pub/#hash), since the setup is simpler, and entities defined in the ontology will be considered 'fragments' of the ontology, e.g., `http://purl.org/car-ontology#ConvertibleCar`.
 
-For gUFO, we used the URI <http://purl.org/nemo/gufo#>. We setup <http://purl.org/nemo> to point to
-<https://nemo-ufes.github.io/gufo/gufo.ttl> with a 302 Found (note `https` is used in the target of the redirect, but not in the ontology URI.)
+For gUFO, we used the URI <http://purl.org/nemo/gufo#>. We setup <http://purl.org/nemo/gufo> to point to
+<https://nemo-ufes.github.io/gufo/gufo.ttl> with a `302 Found` http response code (note `https` is used in the target of the redirect, but not in the ontology URI.)
 
 So, in the example, <http://purl.org/user123/car-ontology> should redirect to `https://user123.github.io/car-ontology/car-ontology.ttl`. See below under Publication with GitHub pages for information on how the Turtle file ends up online.
 

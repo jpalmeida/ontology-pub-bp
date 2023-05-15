@@ -1,4 +1,4 @@
-# A Simple Semantic Web ontology publication how-to
+# A simple Semantic Web ontology publication how-to
 
 ## About
 

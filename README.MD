@@ -37,7 +37,7 @@ So, in the example, `http://purl.org/user123/car-ontology` should be redirected 
 
 OWL ontologies may have a version URI (or, more generally, IRI), to identify a specific version. Assuming the use of some [semantic versioning](https://semver.org) scheme (with version number structured into MAJOR.MINOR.PATCH), the first release of the ontology would have a version URI `http://purl.org/car-ontology/1.0.0#`. Set up your redirect accordingly. In our running example, `http://purl.org/user123/car-ontology/1.0.0` should redirect to `https://user123.github.io/car-ontology/car-ontology.ttl`.
 
-(If you are using Protégé, note that in the Ontology Version IRI field it suggests an example with `/1.0.0` *after* the hash sign. That is not advisable, as http clients would not be able to resolve different versions of the ontology. This is because the version would be a fragment of the same entity -- the ontology as identified with its URI -- and what we actually want is to denote different entities with the version URI.)
+(If you are using Protégé, note that in the Ontology Version IRI field it suggests an example with `/1.0.0` *after* the hash sign. That is not advisable, as http clients would not be able to resolve different versions of the ontology. This is because the version would be a fragment of the same entity — the ontology as identified with its URI — and what we actually want is to denote different entities with the version URI.)
 
 ## Ontology documentation and recommended meta-data
 

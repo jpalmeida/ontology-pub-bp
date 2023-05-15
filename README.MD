@@ -92,7 +92,7 @@ Check out <http://prefix.cc> to make sure your prefix (`car` identified above `v
 
 In addition to those properties above, use when applicable:
 
-* [`owl:priorVersion`](https://www.w3.org/TR/owl-ref/#priorVersion-def) to identify any previous version of the ontology using that version's URI (e.g., `<http://purl.org/user123/car-ontology/0.2.0>`);
+* [`owl:priorVersion`](https://www.w3.org/TR/owl-ref/#priorVersion-def) to identify any previous version of the ontology using that version's URI (e.g., `<http://purl.org/user123/car-ontology/0.2.0#>`);
 * [`dct:contributor`](http://purl.org/dc/terms/contributor) to acknowledge contributors that are not considered creators;
 * [`dct:publisher`](http://purl.org/dc/terms/publisher) to identify an entity "responsible for making the resource available" (typically the organization where the ontology was developed);
 * [`dct:source`](http://purl.org/dc/terms/source) to identify a related resource (such as a publication) from which the ontology was derived in whole or in part.

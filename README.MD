@@ -1,10 +1,10 @@
-# Semantic Web ontology publication how-to
+# A Simple Semantic Web ontology publication how-to
 
 ## About
 
 This is a simple (opinionated) guide to preparing and publishing a Semantic Web OWL ontology (following some FAIR principles and incorporating some good practices).
 
-It is based on [GitHub](https://github.com) for repository and source control, GitHub Pages for hosting, and [pyLODE](https://github.com/RDFLib/pyLODE) for documentation generation. Some recommendations are also based on [Protégé](https://protege.stanford.edu)'s support.
+It is based on [GitHub](https://github.com) for repository and source control, GitHub Pages for hosting, and [pyLODE](https://github.com/RDFLib/pyLODE) for documentation generation. Some recommendations are based on experience using [Protégé](https://protege.stanford.edu)'s support for metadata and [FOOPS! Ontology Pitfall Scanner for FAIR](https://foops.linkeddata.es/FAIR_validator.html).
 
 Author: João Paulo A. Almeida
 
@@ -12,9 +12,9 @@ Author: João Paulo A. Almeida
 
 Create a GitHub repository for your ontology project. For our examples, we will assume a username on GitHub called `user123`, and a repository called `car-ontology`. (Instead of a user, you can also publish your project under an organization on GitHub, so `user123` might as well be an organization name in GitHub.)
 
-Adding a `README.MD` file for the repository is recommended. See <https://github.com/nemo-ufes/gufo/blob/master/README.md> for an example.
+Adding a `README.MD` file for the repository is recommended, as this is the text shown when the repository is opened. See <https://github.com/nemo-ufes/gufo/blob/master/README.md> for an example.
 
-Also adding a `LICENSE` file is recommended. See <https://github.com/nemo-ufes/gufo/blob/master/LICENSE> for an example using Creative Commons Attribution 4.0 International.
+Also adding a `LICENSE` file is recommended, matching the license of your ontology. See <https://github.com/nemo-ufes/gufo/blob/master/LICENSE> for an example using Creative Commons Attribution 4.0 International.
 
 You can clone the repository you create and use it as a basis for your work on tools like Protégé.
 

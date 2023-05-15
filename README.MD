@@ -115,7 +115,7 @@ For example, considering a username called `user123`, and a repository called `c
 
 ### Generating documentation in html
 
-Generating documentation with tools like [pyLODE](https://github.com/RDFLib/pyLODE) is recommended. See, for example, [car.html](car.html) for the documentation generated automatically for [car.ttl](car.ttl). (If you have Python 3 installed in Linux or Mac OS X, run pyLODE with `pip3 install pylode; pylode car-ontology.ttl -o index.html`. Place `index.html` in the `docs` folder of your repository.
+Generating documentation with tools like [pyLODE](https://github.com/RDFLib/pyLODE) is recommended. See, for example, [car.html](car.html) for the documentation generated automatically for [car.ttl](car.ttl). (If you have Python 3 installed in Linux or Mac OS X, run pyLODE with `pip3 install pylode; pylode car-ontology.ttl -o index.html`. Place `index.html` in the `docs` folder of your repository and it will appear under `https://user123.github.io/car-ontology`.
 
 See also <https://github.com/nemo-ufes/gufo/tree/master/docs> for a markdown overview document, which is rendered in <https://nemo-ufes.github.io/gufo/overview>. It can be used to complement what is generated automatically, and a reference to this kind of documentation can be provided with `rdfs:seeAlso`.
 

@@ -37,11 +37,19 @@ So, in the example, `http://purl.org/user123/car-ontology` should be redirected 
 
 OWL ontologies may have a version URI (or, more generally, IRI), to identify a specific version. Assuming the use of some [semantic versioning](https://semver.org) scheme (with version number structured into MAJOR.MINOR.PATCH), the first release of the ontology would have a version URI `http://purl.org/car-ontology/1.0.0#`. Set up your redirect accordingly. In our running example, `http://purl.org/user123/car-ontology/1.0.0` should redirect to `https://user123.github.io/car-ontology/car-ontology.ttl`.
 
-(If you are using Protégé, note that in the Ontology Version IRI field it suggests an example with `/1.0.0` *after* the hash sign. That is not advisable, as http clients would not be able to resolve different versions of the ontology. This is because the version would be a fragment of the same entity — the ontology as identified with its URI — and what we actually want is to denote different entities with the version URI.)
+(If you are using Protégé, note that in the Ontology Version IRI field it suggests an example with `/1.0.0` *after* the hash sign. That is not advisable, as http clients would not be able to resolve different versions of the ontology. This is because the version would be a fragment of the same entity — the ontology as identified with its URI — and what we actually want is to denote a different entity with the version URI.)
 
 ## Ontology documentation and recommended meta-data
 
-A bare minimum requirement is that elements of the ontology are annotated with `rdfs:comment`. It is also recommended to have `rdfs:label` annotations for all classes and properties as well as `rdfs:isDefinedBy`.
+A bare minimum requirement is that all elements of the ontology are annotated with `rdfs:comment` and `rdfs:label`. The use of `rdfs:isDefinedBy` is also recommended, for example:
+
+```turtle
+:ConvertibleCar rdf:type owl:Class ;
+                rdfs:subClassOf :Car ;
+                rdfs:comment "A Car with a removable roof."@en ;
+                rdfs:label "ConvertibleCar"@en ;
+                rdfs:isDefinedBy <http://purl.org/user123/car-ontology#> .
+```
 
 We recommend the following ontology meta-data:
 
@@ -78,7 +86,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0 <h
 For the source repository, see: <https://github.com/user123/car-ontology>"""@en .
 ```
 
-See [car.ttl](car.ttl) for an ontology starting with this fragment above.
+See [car.ttl](car.ttl) for the simple example ontology starting with this fragment above.
 
 In addition to those properties above, use `dct:contributor` to acknowledge contributors that are not considered creators. Use also `dct:publisher` to identify an entity "responsible for making the resource available" (typically the organization where the ontology was developed).
 

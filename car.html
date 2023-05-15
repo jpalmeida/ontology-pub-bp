@@ -287,6 +287,14 @@ td {
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
+    "https://schema.org/creator": [
+      {
+        "@value": "Doe, Jane"
+      },
+      {
+        "@value": "Smith, John"
+      }
+    ],
     "https://schema.org/dateCreated": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
@@ -296,7 +304,7 @@ td {
     "https://schema.org/dateModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-05-01"
+        "@value": "2023-05-15"
       }
     ],
     "https://schema.org/description": [
@@ -342,6 +350,17 @@ td {
           </div>
           <div>
             <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/creator" title="An entity responsible for making the resource. Defined in DCMI Metadata Terms">Creator</a>
+            </dt>
+            <dd>
+              <ul>
+                <li><p>Doe, Jane</p></li>
+                <li><p>Smith, John</p></li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/created" title="Date of creation of the resource. Defined in DCMI Metadata Terms">Date Created</a>
             </dt>
             <dd><p>2023-05-01</p></dd>
@@ -350,7 +369,7 @@ td {
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
             </dt>
-            <dd><p>2023-05-01</p></dd>
+            <dd><p>2023-05-15</p></dd>
           </div>
           <div>
             <dt>
@@ -533,6 +552,19 @@ Doe, J., Smith. J. "The Car Ontology", 2023, http://purl.org/user123/car-ontolog
             </tr>
           </table>
         </div>
+        <div class="property entity" id="language">
+          <h3>language
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/language</code>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="license">
           <h3>license
             <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
@@ -597,13 +629,17 @@ Doe, J., Smith. J. "The Car Ontology", 2023, http://purl.org/user123/car-ontolog
           <dd>
             <code>http://purl.org/dc/elements/1.1/</code>
           </dd>
-          <dt id="dct">dct</dt>
+          <dt id="dcterms">dcterms</dt>
           <dd>
             <code>http://purl.org/dc/terms/</code>
           </dd>
           <dt id="owl">owl</dt>
           <dd>
             <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="prov">prov</dt>
+          <dd>
+            <code>http://www.w3.org/ns/prov#</code>
           </dd>
           <dt id="rdf">rdf</dt>
           <dd>
@@ -693,6 +729,9 @@ Doe, J., Smith. J. "The Car Ontology", 2023, http://purl.org/user123/car-ontolog
               <a href="#created">created</a>
             </li>
             <li>
+              <a href="#language">language</a>
+            </li>
+            <li>
               <a href="#license">license</a>
             </li>
             <li>
@@ -718,10 +757,13 @@ Doe, J., Smith. J. "The Car Ontology", 2023, http://purl.org/user123/car-ontolog
               <a href="#dc">dc</a>
             </li>
             <li>
-              <a href="#dct">dct</a>
+              <a href="#dcterms">dcterms</a>
             </li>
             <li>
               <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#prov">prov</a>
             </li>
             <li>
               <a href="#rdf">rdf</a>

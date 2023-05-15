@@ -79,7 +79,7 @@ This work is distributed under Creative Commons Attribution License CC BY 4.0 <h
 For the source repository, see: <https://github.com/user123/car-ontology>"""@en .
 ```
 
-See [car.ttl](car.ttl) for this example.
+See [car.ttl](car.ttl) for an ontology starting with this fragment above.
 
 Check out <http://prefix.cc> to make sure your prefix (`vann:preferredNamespacePrefix' above) won't clash with existing ones, and register the chosen prefix in that service.
 

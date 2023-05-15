@@ -88,7 +88,11 @@ For the source repository, see: <https://github.com/user123/car-ontology>"""@en 
 
 See [car.ttl](car.ttl) for the simple example ontology starting with this fragment above.
 
-In addition to those properties above, use `dct:contributor` to acknowledge contributors that are not considered creators. Use also `dct:publisher` to identify an entity "responsible for making the resource available" (typically the organization where the ontology was developed).
+In addition to those properties above, use when applicable:
+
+* [`dct:contributor`](http://purl.org/dc/terms/contributor) to acknowledge contributors that are not considered creators;
+* `dct:publisher` to identify an entity "responsible for making the resource available" (typically the organization where the ontology was developed);
+* `dct:source` to identify a related resource (such as a publication) from which the ontology was derived in whole or in part.
 
 Check out <http://prefix.cc> to make sure your prefix (`car` identified above `vann:preferredNamespacePrefix`) won't clash with existing ones, and register the chosen prefix in that service.
 

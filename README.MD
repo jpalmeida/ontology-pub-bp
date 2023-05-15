@@ -88,13 +88,14 @@ For the source repository, see: <https://github.com/user123/car-ontology>"""@en 
 
 See [car.ttl](car.ttl) for the simple example ontology starting with this fragment above.
 
+Check out <http://prefix.cc> to make sure your prefix (`car` identified above `vann:preferredNamespacePrefix`) won't clash with existing ones, and register the chosen prefix in that service.
+
 In addition to those properties above, use when applicable:
 
+* [`owl:priorVersion`](https://www.w3.org/TR/owl-ref/#priorVersion-def) to identify any previous version of the ontology using that version's URI (e.g., `<http://purl.org/user123/car-ontology/0.2.0>`);
 * [`dct:contributor`](http://purl.org/dc/terms/contributor) to acknowledge contributors that are not considered creators;
-* `dct:publisher` to identify an entity "responsible for making the resource available" (typically the organization where the ontology was developed);
-* `dct:source` to identify a related resource (such as a publication) from which the ontology was derived in whole or in part.
-
-Check out <http://prefix.cc> to make sure your prefix (`car` identified above `vann:preferredNamespacePrefix`) won't clash with existing ones, and register the chosen prefix in that service.
+* [`dct:publisher`](http://purl.org/dc/terms/publisher) to identify an entity "responsible for making the resource available" (typically the organization where the ontology was developed);
+* [`dct:source`](http://purl.org/dc/terms/source) to identify a related resource (such as a publication) from which the ontology was derived in whole or in part.
 
 ## Publication with GitHub pages
 
@@ -116,7 +117,7 @@ For example, considering a username called `user123`, and a repository called `c
 
 Generating documentation with tools like [pyLODE](https://github.com/RDFLib/pyLODE) is recommended. See, for example, [car.html](car.html) for the documentation generated automatically for [car.ttl](car.ttl). (If you have Python 3 installed in Linux or Mac OS X, run pyLODE with `pip3 install pylode; pylode car-ontology.ttl -o index.html`. Place `index.html` in the `docs` folder of your repository.
 
-See also <https://github.com/nemo-ufes/gufo/tree/master/docs> for a markdown overview document, which is rendered in <https://nemo-ufes.github.io/gufo/overview>. It can be used to complement what is generated automatically.
+See also <https://github.com/nemo-ufes/gufo/tree/master/docs> for a markdown overview document, which is rendered in <https://nemo-ufes.github.io/gufo/overview>. It can be used to complement what is generated automatically, and a reference to this kind of documentation can be provided with `rdfs:seeAlso`.
 
 ## Findability (the 'F' in 'FAIR' is for 'Findable')
 
